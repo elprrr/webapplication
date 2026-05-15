@@ -1,0 +1,28 @@
+<app-page-shell
+  [title]="isEdit ? 'catalog.types.edit' : 'catalog.types.new'"
+  subtitle="catalog.types.subtitle"
+  backRoute="/catalog/types"
+>
+  <mat-card class="form-card">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="catalog-form">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'common.name' | translate }}</mat-label>
+          <input matInput formControlName="name" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'common.description' | translate }}</mat-label>
+          <textarea matInput formControlName="description" rows="3"></textarea>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <a mat-stroked-button routerLink="/catalog/types">{{ 'common.cancel' | translate }}</a>
+          <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">
+            {{ isEdit ? ('common.save' | translate) : ('common.create' | translate) }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</app-page-shell>

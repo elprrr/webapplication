@@ -1,0 +1,51 @@
+<app-page-shell
+  title="catalog.ingredientQuantities.title"
+  subtitle="catalog.ingredientQuantities.subtitle"
+  addRoute="/catalog/ingredient-quantities/new"
+  addLabel="catalog.ingredientQuantities.add"
+  [loading]="store.loading()"
+  [error]="store.error()"
+>
+  <div class="data-card">
+    @if (store.ingredientQuantities().length === 0 && !store.loading()) {
+      <div class="empty-state">
+        <mat-icon>scale</mat-icon>
+        <p>{{ 'common.empty' | translate }}</p>
+      </div>
+    } @else {
+      <table mat-table [dataSource]="store.ingredientQuantities()">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.id' | translate }}</th>
+          <td mat-cell *matCellDef="let item">{{ item.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="recipe">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.ingredientQuantities.recipe' | translate }}</th>
+          <td mat-cell *matCellDef="let item">{{ item.recipe?.title ?? ('#' + item.recipeId) }}</td>
+        </ng-container>
+        <ng-container matColumnDef="ingredient">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.ingredientQuantities.ingredient' | translate }}</th>
+          <td mat-cell *matCellDef="let item">{{ item.ingredient?.name ?? ('#' + item.ingredientId) }}</td>
+        </ng-container>
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.ingredientQuantities.quantity' | translate }}</th>
+          <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.actions' | translate }}</th>
+          <td mat-cell *matCellDef="let item">
+            <div class="table-actions">
+              <button mat-icon-button color="primary" (click)="editIngredientQuantity(item.id)" [attr.aria-label]="'common.edit' | translate">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteIngredientQuantity(item.id)" [attr.aria-label]="'common.delete' | translate">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    }
+  </div>
+</app-page-shell>

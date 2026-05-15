@@ -1,0 +1,19 @@
+:host {
+  display: inline-flex;
+}
+
+:host ::ng-deep .mat-button-toggle-group {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+:host ::ng-deep .mat-button-toggle {
+  color: rgba(255, 255, 255, 0.9);
+  background: transparent;
+}
+
+:host ::ng-deep .mat-button-toggle-checked {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}

@@ -1,0 +1,55 @@
+<app-page-shell
+  title="catalog.nutrients.title"
+  subtitle="catalog.nutrients.subtitle"
+  addRoute="/catalog/nutrients/new"
+  addLabel="catalog.nutrients.add"
+  [loading]="store.loading()"
+  [error]="store.error()"
+>
+  <div class="data-card">
+    @if (store.nutrients().length === 0 && !store.loading()) {
+      <div class="empty-state">
+        <mat-icon>monitor_heart</mat-icon>
+        <p>{{ 'common.empty' | translate }}</p>
+      </div>
+    } @else {
+      <table mat-table [dataSource]="store.nutrients()">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.id' | translate }}</th>
+          <td mat-cell *matCellDef="let nutrient">{{ nutrient.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="calories">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.nutrients.calories' | translate }}</th>
+          <td mat-cell *matCellDef="let nutrient">{{ nutrient.calories }}</td>
+        </ng-container>
+        <ng-container matColumnDef="carbs">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.nutrients.carbs' | translate }}</th>
+          <td mat-cell *matCellDef="let nutrient">{{ nutrient.carbs }}</td>
+        </ng-container>
+        <ng-container matColumnDef="proteins">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.nutrients.proteins' | translate }}</th>
+          <td mat-cell *matCellDef="let nutrient">{{ nutrient.proteins }}</td>
+        </ng-container>
+        <ng-container matColumnDef="fats">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.nutrients.fats' | translate }}</th>
+          <td mat-cell *matCellDef="let nutrient">{{ nutrient.fats }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.actions' | translate }}</th>
+          <td mat-cell *matCellDef="let nutrient">
+            <div class="table-actions">
+              <button mat-icon-button color="primary" (click)="editNutrient(nutrient.id)" [attr.aria-label]="'common.edit' | translate">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteNutrient(nutrient.id)" [attr.aria-label]="'common.delete' | translate">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    }
+  </div>
+</app-page-shell>

@@ -1,0 +1,55 @@
+<app-page-shell
+  title="catalog.recipes.title"
+  subtitle="catalog.recipes.subtitle"
+  addRoute="/catalog/recipes/new"
+  addLabel="catalog.recipes.add"
+  [loading]="store.loading()"
+  [error]="store.error()"
+>
+  <div class="data-card">
+    @if (store.recipes().length === 0 && !store.loading()) {
+      <div class="empty-state">
+        <mat-icon>menu_book</mat-icon>
+        <p>{{ 'common.empty' | translate }}</p>
+      </div>
+    } @else {
+      <table mat-table [dataSource]="store.recipes()">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.id' | translate }}</th>
+          <td mat-cell *matCellDef="let recipe">{{ recipe.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.recipes.titleCol' | translate }}</th>
+          <td mat-cell *matCellDef="let recipe">{{ recipe.title }}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.description' | translate }}</th>
+          <td mat-cell *matCellDef="let recipe">{{ recipe.description }}</td>
+        </ng-container>
+        <ng-container matColumnDef="recipeTypeId">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.recipes.type' | translate }}</th>
+          <td mat-cell *matCellDef="let recipe">{{ recipe.type?.name ?? ('common.none' | translate) }}</td>
+        </ng-container>
+        <ng-container matColumnDef="totalNutrientsId">
+          <th mat-header-cell *matHeaderCellDef>{{ 'catalog.recipes.nutrientsId' | translate }}</th>
+          <td mat-cell *matCellDef="let recipe">{{ recipe.totalNutrientsId }}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>{{ 'common.actions' | translate }}</th>
+          <td mat-cell *matCellDef="let recipe">
+            <div class="table-actions">
+              <button mat-icon-button color="primary" (click)="editRecipe(recipe.id)" [attr.aria-label]="'common.edit' | translate">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteRecipe(recipe.id)" [attr.aria-label]="'common.delete' | translate">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    }
+  </div>
+</app-page-shell>

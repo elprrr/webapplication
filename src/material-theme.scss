@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$green-palette,
+        tertiary: mat.$orange-palette,
+      ),
+      typography: (
+        plain-family: 'Plus Jakarta Sans',
+        brand-family: 'Plus Jakarta Sans',
+      ),
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--bw-surface, var(--mat-sys-surface));
+  color: var(--bw-text, var(--mat-sys-on-surface));
+  margin: 0;
+  height: 100%;
+}
+
+.mat-toolbar.bw-toolbar {
+  background: linear-gradient(90deg, #065a38, #0d7a4e) !important;
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(6, 90, 56, 0.25);
+}
+
+.mat-mdc-button.bw-nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.mat-mdc-button.bw-nav-link.active,
+.mat-mdc-button.bw-nav-link:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}

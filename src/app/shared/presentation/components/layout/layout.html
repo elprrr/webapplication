@@ -1,0 +1,45 @@
+<mat-sidenav-container class="app-shell">
+  <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+    <div class="sidenav-brand">
+      <mat-icon class="brand-icon">restaurant</mat-icon>
+      <span class="brand-name">BiteWise</span>
+    </div>
+
+    <nav class="sidenav-nav">
+      <p class="nav-group-label">{{ 'nav.main' | translate }}</p>
+      <a mat-button routerLink="/home" routerLinkActive="active" class="sidenav-link">
+        <mat-icon>home</mat-icon>
+        {{ 'option.home' | translate }}
+      </a>
+      <a mat-button routerLink="/about" routerLinkActive="active" class="sidenav-link">
+        <mat-icon>info</mat-icon>
+        {{ 'option.about' | translate }}
+      </a>
+
+      <p class="nav-group-label">{{ 'nav.catalog' | translate }}</p>
+      @for (option of catalogOptions; track option.link) {
+        <a mat-button [routerLink]="option.link" routerLinkActive="active" class="sidenav-link">
+          <mat-icon>{{ option.icon }}</mat-icon>
+          {{ option.label | translate }}
+        </a>
+      }
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="app-content">
+    <mat-toolbar class="bw-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()" class="menu-toggle" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title">BiteWise</span>
+      <span class="mat-spacer"></span>
+      <app-language-switcher />
+    </mat-toolbar>
+
+    <main class="app-main">
+      <router-outlet />
+    </main>
+
+    <app-footer-content />
+  </mat-sidenav-content>
+</mat-sidenav-container>

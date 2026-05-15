@@ -1,0 +1,18 @@
+.footer-content {
+  margin-top: auto;
+  padding: 1.25rem var(--bw-page-padding);
+  background: var(--bw-surface-elevated);
+  border-top: 1px solid var(--bw-border);
+  text-align: center;
+  color: var(--bw-muted);
+  font-size: 0.85rem;
+}
+
+.footer-content p {
+  margin: 0.25rem 0;
+}
+
+.footer-content a {
+  color: var(--bw-brand);
+  font-weight: 600;
+}

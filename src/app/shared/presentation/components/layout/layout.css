@@ -1,0 +1,103 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-sidenav {
+  width: 260px;
+  background: var(--bw-surface-elevated);
+  border-right: 1px solid var(--bw-border);
+}
+
+.sidenav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.25rem 1rem 1rem;
+  border-bottom: 1px solid var(--bw-border);
+}
+
+.brand-icon {
+  color: var(--bw-brand);
+  font-size: 1.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--bw-brand-dark);
+}
+
+.sidenav-nav {
+  padding: 0.75rem 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav-group-label {
+  margin: 1rem 0.5rem 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--bw-muted);
+}
+
+.sidenav-link {
+  justify-content: flex-start !important;
+  border-radius: 10px !important;
+  color: var(--bw-text) !important;
+  font-weight: 500;
+}
+
+.sidenav-link mat-icon {
+  margin-right: 0.75rem;
+  color: var(--bw-muted);
+}
+
+.sidenav-link.active,
+.sidenav-link:hover {
+  background: var(--bw-brand-light) !important;
+  color: var(--bw-brand-dark) !important;
+}
+
+.sidenav-link.active mat-icon,
+.sidenav-link:hover mat-icon {
+  color: var(--bw-brand);
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bw-surface);
+}
+
+.mat-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-left: 0.25rem;
+}
+
+.menu-toggle {
+  color: #fff;
+}
+
+@media (min-width: 960px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .app-sidenav {
+    width: min(280px, 85vw);
+  }
+}

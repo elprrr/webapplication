@@ -1,0 +1,38 @@
+<section class="hero">
+  <h1>{{ 'home.title' | translate }}</h1>
+  <p>{{ 'home.content' | translate }}</p>
+</section>
+
+<h2 class="section-title">{{ 'home.featuresTitle' | translate }}</h2>
+<div class="feature-grid">
+  <a class="feature-card" routerLink="/catalog/recipes">
+    <mat-icon>menu_book</mat-icon>
+    <h3>{{ 'option.recipes' | translate }}</h3>
+    <p>{{ 'home.recipesDesc' | translate }}</p>
+  </a>
+  <a class="feature-card" routerLink="/catalog/ingredients">
+    <mat-icon>eco</mat-icon>
+    <h3>{{ 'option.ingredients' | translate }}</h3>
+    <p>{{ 'home.ingredientsDesc' | translate }}</p>
+  </a>
+  <a class="feature-card" routerLink="/catalog/nutrients">
+    <mat-icon>monitor_heart</mat-icon>
+    <h3>{{ 'option.nutrients' | translate }}</h3>
+    <p>{{ 'home.nutrientsDesc' | translate }}</p>
+  </a>
+  <a class="feature-card" routerLink="/catalog/categories">
+    <mat-icon>category</mat-icon>
+    <h3>{{ 'option.categories' | translate }}</h3>
+    <p>{{ 'home.categoriesDesc' | translate }}</p>
+  </a>
+  <a class="feature-card" routerLink="/catalog/types">
+    <mat-icon>style</mat-icon>
+    <h3>{{ 'option.types' | translate }}</h3>
+    <p>{{ 'home.typesDesc' | translate }}</p>
+  </a>
+  <a class="feature-card" routerLink="/catalog/ingredient-quantities">
+    <mat-icon>scale</mat-icon>
+    <h3>{{ 'option.ingredientQuantities' | translate }}</h3>
+    <p>{{ 'home.quantitiesDesc' | translate }}</p>
+  </a>
+</div>

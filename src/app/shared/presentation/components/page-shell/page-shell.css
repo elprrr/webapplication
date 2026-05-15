@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.page-header-start {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--bw-muted);
+  font-size: 0.95rem;
+  max-width: 42rem;
+}
+
+.page-add-btn mat-icon {
+  margin-right: 0.25rem;
+}
+
+.page-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  border-radius: var(--bw-radius-lg);
+  margin-bottom: 1rem;
+}
+
+.page-loading {
+  background: var(--bw-surface-elevated);
+  color: var(--bw-muted);
+}
+
+.page-error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.page-error mat-icon {
+  flex-shrink: 0;
+}
+
+.page-body--dimmed {
+  opacity: 0.45;
+  pointer-events: none;
+}

@@ -1,0 +1,41 @@
+<section class="page-shell">
+  <header class="page-header">
+    <div class="page-header-start">
+      @if (backRoute()) {
+        <a mat-icon-button [routerLink]="backRoute()" class="back-btn" [attr.aria-label]="'common.back' | translate">
+          <mat-icon>arrow_back</mat-icon>
+        </a>
+      }
+      <div>
+        <h1>{{ title() | translate }}</h1>
+        @if (subtitle()) {
+          <p class="page-subtitle">{{ subtitle() | translate }}</p>
+        }
+      </div>
+    </div>
+    @if (addRoute()) {
+      <a mat-flat-button color="primary" [routerLink]="addRoute()" class="page-add-btn">
+        <mat-icon>add</mat-icon>
+        {{ addLabel() | translate }}
+      </a>
+    }
+  </header>
+
+  @if (loading()) {
+    <div class="page-state page-loading" role="status">
+      <mat-spinner diameter="48"></mat-spinner>
+      <span>{{ 'common.loading' | translate }}</span>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="page-state page-error" role="alert">
+      <mat-icon>error_outline</mat-icon>
+      <span>{{ error() }}</span>
+    </div>
+  }
+
+  <div class="page-body" [class.page-body--dimmed]="loading()">
+    <ng-content />
+  </div>
+</section>

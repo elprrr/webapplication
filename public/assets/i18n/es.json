@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "main": "Principal",
+    "catalog": "Catálogo"
+  },
+  "option": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "categories": "Categorías",
+    "types": "Tipos",
+    "nutrients": "Nutrientes",
+    "recipes": "Recetas",
+    "ingredients": "Ingredientes",
+    "ingredientQuantities": "Cantidades"
+  },
+  "common": {
+    "loading": "Cargando…",
+    "add": "Añadir",
+    "back": "Volver",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "create": "Crear",
+    "actions": "Acciones",
+    "id": "ID",
+    "name": "Nombre",
+    "description": "Descripción",
+    "none": "Ninguno",
+    "empty": "No hay registros todavía."
+  },
+  "catalog": {
+    "categories": {
+      "title": "Categorías",
+      "subtitle": "Organiza tus ingredientes por categoría.",
+      "add": "Nueva categoría",
+      "new": "Crear categoría",
+      "edit": "Editar categoría"
+    },
+    "types": {
+      "title": "Tipos de receta",
+      "subtitle": "Clasifica recetas por tipo culinario.",
+      "add": "Nuevo tipo",
+      "new": "Crear tipo",
+      "edit": "Editar tipo"
+    },
+    "nutrients": {
+      "title": "Nutrientes",
+      "subtitle": "Valores nutricionales por porción.",
+      "add": "Nuevo nutriente",
+      "new": "Crear nutriente",
+      "edit": "Editar nutriente",
+      "calories": "Calorías",
+      "carbs": "Carbohidratos",
+      "proteins": "Proteínas",
+      "fats": "Grasas"
+    },
+    "recipes": {
+      "title": "Recetas",
+      "subtitle": "Gestiona tu colección de recetas saludables.",
+      "add": "Nueva receta",
+      "new": "Crear receta",
+      "edit": "Editar receta",
+      "titleCol": "Título",
+      "type": "Tipo",
+      "nutrientsId": "Nutrientes"
+    },
+    "ingredients": {
+      "title": "Ingredientes",
+      "subtitle": "Base de datos de ingredientes y su información.",
+      "add": "Nuevo ingrediente",
+      "new": "Crear ingrediente",
+      "edit": "Editar ingrediente",
+      "category": "Categoría",
+      "calories": "Calorías"
+    },
+    "ingredientQuantities": {
+      "title": "Cantidades",
+      "subtitle": "Relación entre recetas e ingredientes.",
+      "add": "Nueva cantidad",
+      "new": "Crear cantidad",
+      "edit": "Editar cantidad",
+      "recipe": "Receta",
+      "ingredient": "Ingrediente",
+      "quantity": "Cantidad"
+    }
+  },
+  "home": {
+    "title": "Nutrición inteligente, recetas deliciosas",
+    "content": "BiteWise te ayuda a gestionar recetas, ingredientes y valores nutricionales en un solo lugar.",
+    "featuresTitle": "Explora el catálogo",
+    "recipesDesc": "Crea y administra recetas con instrucciones y tipo.",
+    "ingredientsDesc": "Controla ingredientes, categorías y calorías.",
+    "nutrientsDesc": "Registra macros y calorías por porción.",
+    "categoriesDesc": "Organiza ingredientes por categoría.",
+    "typesDesc": "Define tipos culinarios para tus recetas.",
+    "quantitiesDesc": "Asigna cantidades de ingredientes a cada receta."
+  },
+  "about": {
+    "title": "Acerca de BiteWise",
+    "content": "BiteWise es una plataforma de nutrición y gestión de recetas diseñada para equipos que necesitan controlar ingredientes, valores nutricionales y composición de platos de forma clara y eficiente.",
+    "mission": "Nuestra misión es simplificar la planificación alimentaria con datos precisos y una experiencia de uso moderna."
+  },
+  "page-not-found": {
+    "title": "Página no encontrada",
+    "content": "La ruta solicitada no existe o fue movida.",
+    "go-home": "Volver al inicio"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "powered-by": "Desarrollado con",
+    "and": "y"
+  }
+}

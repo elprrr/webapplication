@@ -1,0 +1,41 @@
+<app-page-shell
+  [title]="isEdit ? 'catalog.ingredientQuantities.edit' : 'catalog.ingredientQuantities.new'"
+  subtitle="catalog.ingredientQuantities.subtitle"
+  backRoute="/catalog/ingredient-quantities"
+>
+  <mat-card class="form-card">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()" class="catalog-form">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'catalog.ingredientQuantities.recipe' | translate }}</mat-label>
+          <mat-select formControlName="recipeId">
+            @for (recipe of store.recipes(); track recipe.id) {
+              <mat-option [value]="recipe.id">{{ recipe.title }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'catalog.ingredientQuantities.ingredient' | translate }}</mat-label>
+          <mat-select formControlName="ingredientId">
+            @for (ingredient of store.ingredients(); track ingredient.id) {
+              <mat-option [value]="ingredient.id">{{ ingredient.name }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'catalog.ingredientQuantities.quantity' | translate }}</mat-label>
+          <input matInput type="number" formControlName="quantity" required />
+        </mat-form-field>
+
+        <div class="form-actions">
+          <a mat-stroked-button routerLink="/catalog/ingredient-quantities">{{ 'common.cancel' | translate }}</a>
+          <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">
+            {{ isEdit ? ('common.save' | translate) : ('common.create' | translate) }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</app-page-shell>
